@@ -6,11 +6,10 @@ Iremos também abordar as regiões e como escolher adequadamente o local de arma
 
 Deve-se resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da instrução anterior, e realizar diversas requisições na API.
 
-
 <picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://s33046.pcdn.co/wp-content/uploads/2021/03/representational-state-transfer-diagram_gray-e1615546557211.png">
-   <img alt="Arquitetura Geral" src="[YOUR-DEFAULT-IMAGE](https://s33046.pcdn.co/wp-content/uploads/2021/03/representational-state-transfer-diagram_gray-e1615546557211.png)">
-  </picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
+   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
+</picture>
 
 Nessa aula, vamos usar uma instância EC2 com:
 
@@ -18,52 +17,36 @@ Nessa aula, vamos usar uma instância EC2 com:
   
   Framework que utiliza a linguagem Python para criar aplicativos Web. Muito útil para a criação de API RESTful, que por sua vez, utiliza os métodos padrão do protocolo HTTP (como GET, POST, PUT, DELETE) ou CRUD (Create, Read, Update and Delete).
 
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
-</picture>
-
 * Gunicorn (backend):
 
   É uma abreviação de Green Unicorn. Trata-se de um servidor HTTP WSGI (Web Server Gateway Interface) para Python. Ele é usado para executar aplicativos da web Python, como aplicativos Django ou Flask, em produção de forma eficiente e confiável. Para executar um aplicativo Python com o Gunicorn, você normalmente precisa criar um arquivo de configuração, especificando o número de processos ou trabalhadores que o servidor deve utilizar. O Gunicorn então gerencia esses processos e cuida da comunicação entre o servidor da web e o aplicativo Python. Esse aplicativo será chamado de *index.py* mais para frente.
-
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
-  </picture>
-
 
 * NGINGX (deployment):
 
   É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Veja o gráfico para entender sua arquitetura.
 
-  <picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://cdn-media-1.freecodecamp.org/images/RooSvbKlAWsOjkz8JPactXH-GPf4Pe6DC3Ue">
-   <img alt="Arquitetura NGINX" src="[YOUR-DEFAULT-IMAGE](https://cdn-media-1.freecodecamp.org/images/RooSvbKlAWsOjkz8JPactXH-GPf4Pe6DC3Ue)">
-  </picture>
-
 # Objetivo dessa prática
 
-Vamos criar uma API *index.py* que será executado com a ajuda do *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
+Vamos criar uma API *index.py* para Flask que será executado com a ajuda do *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
 
 # Pré-requisitos
 
-### Roteie o sinal de Internet do seu celular para o seu computador, pois é normal o proxy local da rede bloquear a conexão SSH.
+1) É possível que tenhamos que rotear o sinal de Internet do seu celular para o seu computador, pois é normal o proxy local da rede bloquear a conexão SSH.
 
-### Tenha uma conta AWS "logada", seja acadêmica, seja particular.
+2) Tenha uma conta AWS "logada", seja acadêmica, seja particular.
 
 # Passo-01
 
 Crie uma instância EC2 no console AWS (particular ou acadêmica) com as seguintes características:
 
-## Free tier (nível gratuito)
-## Salve a chave SSH (sugestão de nome "FlaskServerUbuntu") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
-## Sistema operacional Ubuntu
-## Regras de entrada:
-### HTTPS
-### HTTP
-### SSH
-### TCP personalizado, digite porta 8000 (importante esse passo)
+### Free tier (nível gratuito)
+### Salve a chave SSH (sugestão de nome "FlaskServerUbuntu") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
+### Sistema operacional Ubuntu
+### Regras de entrada:
+#### * HTTPS
+#### * HTTP
+#### * SSH
+#### * TCP personalizado, digite porta 8000 (importante esse passo)
 
 # Passo-02
 
@@ -240,7 +223,7 @@ Falta instalar o NGINX no seu ambiente virtual, então faça:
 
 Agora vamos ajustar o servidor NGINX para endereçar a nossa aplicação:
 
-# sudo nano /etc/nginx/sites-available/default
+### sudo nano /etc/nginx/sites-available/default
 
 Adicione essas linhas logo no começo, após os comentários
 
@@ -266,13 +249,13 @@ location / {
 }
 
 
-# Passo-17:
+# Passo-18:
 
 Vamos iniciar o servidor:
 
 ### sudo systemctl start nginx
 
-# Passo-18:
+# Passo-19:
 
 Agora está na hora de testar a sua API. Então faça:
 
