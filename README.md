@@ -55,13 +55,13 @@ Nessa aula, vamos usar uma instância EC2 com:
 
 # Objetivo dessa prática
 
-Vamos criar uma API *index.py* para Flask que será executado com a ajuda do *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
+Vamos criar uma API usando Flask que será executado com a ajuda do *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
 
 # Pré-requisitos
 
-1) É possível que tenhamos que rotear o sinal de Internet do seu celular para o seu computador, pois é normal o proxy local da rede bloquear a conexão SSH.
-
-2) Tenha uma conta AWS "logada", seja acadêmica, seja particular.
+1) Tenha uma conta AWS "logada", seja acadêmica, seja particular.
+2) Possuir matrícula no curso LearnLab da AWS.
+3) Estar numa rede local com conectividade SSH externo.
 
 # Passo-01
 
@@ -85,7 +85,7 @@ Você consegue essa linha de acesso clicando em CONECTAR que está no seu consol
 
 A sua chave PEM que você fez download da AWS precisa estar no mesmo diretório que você está apontado no seu terminal Power Shell.
 
-# Passo-02 - Confirmação
+# Passo-02 (teste)
 
 Se a conexão SSH com o seu EC2 tiver ocorrido com sucesso, você terá instanciado um computador virtual na infraestrutura da AWS e terá as seguintes impressões de mensagens na seu terminal:
 
@@ -109,14 +109,15 @@ Atualize sua instância EC2 com os seguintes comandos:
 
 ### sudo apt-get install python3.10-venv [enter]
 
+Após a instalação com sucesso, vai aparecer essa tela, você marca a primeira opção e confirma com [enter].
 
 <picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://drive.google.com/file/d/1Vhln3LAVAyHYnOQuHzI2N8qGiDXP-MMZ/view?usp=sharing">
-   <img alt="Tela-01" src="[TESTE](https://drive.google.com/file/d/1Vhln3LAVAyHYnOQuHzI2N8qGiDXP-MMZ/view?usp=sharing)">
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png">
+   <img alt="Tela-01" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png)">
 </picture>
 
 
-# Passo-05:
+# Passo-04:
 
 Crie um diretório e subdiretório dentro dele:
 
@@ -124,33 +125,37 @@ Crie um diretório e subdiretório dentro dele:
 
 ### mkdir cashman [enter]
 
-# Passo-06:
+# Passo-05:
 
-Instale um ambiente virtual chamado *venv* para você criar as dependências python exclusivas para essa prática.
+Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
 Daqui para frente, mantenha-se no path **cashman-flask-project/cashman**
+O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
 ### python3 -m venv venv
 
-# Passo-07:
+# Passo-06:
 
 Vamos ativar o seu ambiente virtual:
 
 ### source venv/bin/activate [enter]
 
-# Passo-08:
+O resultado será o surgimento do (venv) no início do seu path raiz.
+
+# Passo-07:
 
 Instale o Flask no seu ambiente virtual:
 
 ### pip install flask
 
-# Passo-09:
+# Passo-08:
 
-Crie e edite a aplicação que chamará **index.py**
+Crie e edite a aplicação que se chamará **index.py**
 
 ### sudo nano index.py
 
 E adicione o seguinte código dentro do **index.py**. Copie e cole esse código, cuidado com os aninhamentos. Dê um Ctrl+S para Salvar e Ctrl+X para sair do editor.
 
+```
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -162,42 +167,45 @@ incomes = [
 @app.route('/incomes')
 
 def get_incomes():
-
     return jsonify(incomes)
 
 
 @app.route('/incomes', methods=['POST'])
 
 def add_income():
-
     incomes.append(request.get_json())
-  
     return '', 204
 
 
 if __name__ == "__main__":
-  
     app.run()
+```
 
-# Passo-10:
+# Passo-08 (teste):
 
 Caso queira conferir como ficou a sua edição, faça:
 
 ### cat index.py [enter]
 
-# Passo-11:
-
 Caso queira testar o seu código index.py, faça:
 
 ### python3 index.py [enter]
 
-# Passo-12:
+E o resultado será essa tela abaixo:
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-02.png">
+   <img alt="Tela-02" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-02.png)">
+</picture>
+
+
+# Passo-09:
 
 Agora vamos instalar o servidor python *gunicorn*:
 
 ### pip install gunicorn [enter]
 
-# Passo-13:
+# Passo-10:
 
 Agora vamos criar o script de boot no seu EC2: 
 
@@ -205,29 +213,23 @@ Agora vamos criar o script de boot no seu EC2:
 
 E copie e cole esse script no seu arquivo cash.service:
 
+```
 [Unit]
-
 Description=Gunicorn serve para instanciar uma simples aplicacao cashman.service
-
 After=network.target
 
 [Service]
-
 User=ubuntu
-
 Group=www-data
-
 WorkingDirectory=/home/ubuntu/cashman-flask-project
-
 ExecStart=/home/ubuntu/cashman-flask-project/venv/bin/gunicorn -b localhost:8000 cashman.index:app
-
 Restart=always
 
 [Install]
-
 WantedBy=multi-user.target
+```
 
-# Passo-14:
+# Passo-11:
 
 Agora execute o serviço cashman.index:
 
@@ -241,56 +243,77 @@ Caso queira iniciar automaticamente o serviço cash.service no booting da sua in
 
 ### sudo systemctl enable cash.service
 
-# Passo-15:
+# Passo-11 (teste):
 
 Caso queira testar localmente como está sua aplicação, faça:
 
 ### curl localhost:8000/incomes
 
-# Passo-16:
+E o resultado será o que está na figura a seguir:
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png">
+   <img alt="Tela-03" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png)">
+</picture>
+
+
+# Passo-12:
 
 Falta instalar o NGINX no seu ambiente virtual, então faça:
 
-### sudo apt-get nginx
+### sudo apt install nginx
+
+E você terá essa tela abaixo, marque a opção e confirme com [enter]
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png">
+   <img alt="Tela-04" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png)">
+</picture>
 
 
-# Passo-17:
+# Passo-13:
 
 Agora vamos ajustar o servidor NGINX para endereçar a nossa aplicação:
 
 ### sudo nano /etc/nginx/sites-available/default
 
 Adicione essas linhas logo no começo, após os comentários
-
+```
 #Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
 #Default server configuration
 
 upstream flaskhelloworld {
-  server 127.0.0.1:80;
+  server 127.0.0.1:8000;
 }
+```
 
 e dentro do location, comente esse linha:
 
+```
 try_files $uri $uri/ =404;
+```
 
 e adicione essa:
 
+```
 proxy_pass http://flaskhelloworld;
+```
 
 ficando assim:
 
+```
 location / {
     proxy_pass http://flaskhelloworld;
 }
+```
 
-
-# Passo-18:
+# Passo-14:
 
 Vamos iniciar o servidor:
 
 ### sudo systemctl start nginx
 
-# Passo-19:
+# Passo-15:
 
 Agora está na hora de testar a sua API. Então faça:
 
@@ -300,4 +323,45 @@ Exemplo: **ec2-54-161-205-18.compute-1.amazonaws.com/incomes**
 
 Quando fizer isso, você fará um GET e deverá retornar o seguinte:
 
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-05.png">
+   <img alt="Tela-05" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-05.png)">
+</picture>
 
+# Passo-16:
+
+Agora vamos fazer testes usando o https://www.postman.com/ (você terá que abrir uma conta, é gratuito).
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-06.png">
+   <img alt="Tela-06" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-06.png)">
+</picture>
+
+Dentro do Postman, crie um novo **My Workspace**, coloque um nome que desejar
+
+Clique no sinal de + para adicionar uma aba;
+
+a) Clique em **Headers** e preencha:
+
+* Na coluna **Key** coloque **Content-Type**
+* Na coluna **value** coloque **application/json**
+
+b) Clique em **Body** e preencha com json abaixo e clique em **raw**
+
+```
+{
+    "amount": 2023,
+    "description": "teste"
+}
+```
+
+c) Selecione o método **POST** e cole seu link EC2 acrescido de **/incomes**
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-07.png">
+   <img alt="Tela-07" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-07.png)">
+</picture>
+
+d) Clique em SEND e depois vá na aba do seu navegador onde está o link EC2/incomes e atualize a tela, e você terá o resultado do POST que acabou de fazer
+
+e) Você pode fazer um GET nesse ambiente que retornará os POST que foram feitos
