@@ -313,6 +313,8 @@ Vamos iniciar o servidor:
 
 ### sudo systemctl start nginx
 
+### sudo systemctl restart nginx
+
 # Passo-15:
 
 Agora está na hora de testar a sua API. Então faça:
