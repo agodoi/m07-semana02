@@ -9,15 +9,28 @@ Deve-se resgatar o conceito de API aplicando uma prática usando FLASK (minimal 
 
 # O que é região e zona AWS?
 
-Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de 1 ms, têm sistemas redundantes e há uma distância entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade.
+Uma região é uma soma de zonas.
+
+Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de 1 ms, têm sistemas redundantes e há uma distância entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade. 
+
+Cada região AWS é totalmente independente, isto é, é projetada para ser isolada das outras regiões da AWS. Esse design proporciona o máximo de tolerância a falhas e estabilidade possível. Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase de construção: Canadá, Israel, Nova Zelândia e Tailândia. E de zonas, são 99 ao todo.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png">
+   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png)">
+</picture>
+
+
+# Qual a melhor região?
+
+Para definir a melhor região, deve-se usar a calculadora da AWS para simular os preços, pois depende da sua arquitetura e do SLA (Service Level Agreement) de cada componente (que basicamente é o nível de disponibilidade que ele oferece), a resiliência e a tolerência à falhas oferecidas. Outra questão é a LGPD que a depender do seu negócio, exige que os dados pessoais e sensíveis dos usuários envolvidos estejam no território brasileiro. A AWS sabendo disso, pode cobrar valores maiores devido à exigência dos dados permanecerem sempre numa mesma região.
 
 
 <picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png
-">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png
-)">
+   <source media="(prefers-color-scheme: light)" srcset="https://d2908q01vomqb2.cloudfront.net/4d134bc072212ace2df385dae143139da74ec0ef/2021/01/18/image005.jpg">
+   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://d2908q01vomqb2.cloudfront.net/4d134bc072212ace2df385dae143139da74ec0ef/2021/01/18/image005.jpg)">
 </picture>
+
 
 # Aula Prática
 
@@ -61,7 +74,7 @@ Crie uma instância EC2 no console AWS (particular ou acadêmica) com as seguint
 #### * HTTPS
 #### * HTTP
 #### * SSH
-#### * TCP personalizado, digite porta 8000 (importante esse passo)
+#### * TCP personalizado, digite porta 8000 (importante esse passo), deixe como "qualquer lugar"
 
 # Passo-02
 
@@ -72,7 +85,7 @@ Você consegue essa linha de acesso clicando em CONECTAR que está no seu consol
 
 A sua chave PEM que você fez download da AWS precisa estar no mesmo diretório que você está apontado no seu terminal Power Shell.
 
-# Passo-03
+# Passo-02 - Confirmação
 
 Se a conexão SSH com o seu EC2 tiver ocorrido com sucesso, você terá instanciado um computador virtual na infraestrutura da AWS e terá as seguintes impressões de mensagens na seu terminal:
 
@@ -88,13 +101,20 @@ Se a conexão SSH com o seu EC2 tiver ocorrido com sucesso, você terá instanci
 
 e você estará parado num diretório raiz do tipo **ubuntu@ip-172-31-93-207:~$** onde o IP será exclusivo da sua instância e não igual a esse.
 
-# Passo-04:
+# Passo-03:
 
 Atualize sua instância EC2 com os seguintes comandos:
 
 ### sudo apt-get update [enter]
 
 ### sudo apt-get install python3.10-venv [enter]
+
+
+<picture>
+   <source media="(prefers-color-scheme: light)"srcset="https://drive.google.com/file/d/1Vhln3LAVAyHYnOQuHzI2N8qGiDXP-MMZ/view?usp=sharing">
+   <img alt="Tela-01" src="[TESTE](https://drive.google.com/file/d/1Vhln3LAVAyHYnOQuHzI2N8qGiDXP-MMZ/view?usp=sharing)">
+</picture>
+
 
 # Passo-05:
 
