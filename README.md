@@ -128,7 +128,7 @@ Crie um diretório e subdiretório dentro dele:
 # Passo-05:
 
 Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
-Daqui para frente, mantenha-se no path **cashman-flask-project/cashman**
+Daqui para frente, mantenha-se no path **cashman-flask-project/**
 O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
 ### python3 -m venv venv
