@@ -6,6 +6,21 @@ Iremos também abordar as regiões e como escolher adequadamente o local de arma
 
 Deve-se resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da instrução anterior, e realizar diversas requisições na API.
 
+
+# O que é região e zona AWS?
+
+Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de 1 ms, têm sistemas redundantes e há uma distância entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade.
+
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png
+">
+   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png
+)">
+</picture>
+
+# Aula Prática
+
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
    <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
