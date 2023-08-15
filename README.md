@@ -149,7 +149,7 @@ Instale o Flask no seu ambiente virtual:
 
 # Passo-08:
 
-Cuidado! Agora você precisa entrar na subpasta **cashman-flask-project/cashman** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **cashman-flask-project/**
+Cuidado! Agora você precisa entrar na subpasta **(venv)cashman-flask-project/cashman** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)cashman-flask-project/**
 
 ### sudo nano index.py
 
