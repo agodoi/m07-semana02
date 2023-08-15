@@ -258,6 +258,11 @@ E o resultado será o que está na figura a seguir:
    <img alt="Tela-03" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png)">
 </picture>
 
+Se você não viu a figura acima, faça o seguinte:
+
+### sudo systemctl stop cash.service [enter]
+
+### sudo systemctl restart cash.service [enter]
 
 # Passo-12:
 
