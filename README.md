@@ -235,6 +235,8 @@ Agora execute o serviço cashman.index:
 
 ### sudo systemctl start cash.service
 
+### sudo systemctl restart cash.service
+
 Caso altere alguma coisa no cash.service, faça:
 
 ### sudo systemctl daemon-reload
