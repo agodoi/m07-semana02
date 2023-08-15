@@ -200,7 +200,7 @@ E o resultado será essa tela abaixo:
 
 
 # Passo-09:
-
+Atenção! Volte para **(venv)cashman-flask-project/**
 Agora vamos instalar o servidor python *gunicorn*:
 
 ### pip install gunicorn [enter]
