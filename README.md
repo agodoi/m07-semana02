@@ -121,8 +121,10 @@ Após a instalação com sucesso, vai aparecer essa tela, você marca a primeira
 
 Crie um diretório e subdiretório dentro dele:
 
+DIRETÓRIO
 ### mkdir cashman-flask-project [enter]
 
+SUBDIRETÓRIO DO DIRETÓRIO
 ### mkdir cashman [enter]
 
 # Passo-05:
