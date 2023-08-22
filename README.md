@@ -335,6 +335,8 @@ Copie seu link externo do EC2 (que está no console da AWS, em EC2, na opção *
 
 Exemplo: **ec2-54-161-205-18.compute-1.amazonaws.com/incomes**
 
+### Mas atenção: seu endereço do navegador não pode ter HTTPS e sim, HTTP, pois nossa aplicação não está usando HTTP criptografado. Cuidado com isso, pois vai parecer que não está funcionando direito.
+
 Quando fizer isso, você fará um GET e deverá retornar o seguinte:
 
 <picture>
