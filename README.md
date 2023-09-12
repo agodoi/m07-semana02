@@ -211,9 +211,9 @@ Agora vamos instalar o servidor python *gunicorn*:
 
 Agora vamos criar o script de boot no seu EC2: 
 
-### sudo nano /etc/systemd/system/cash.service
+### sudo nano /etc/systemd/system/projeto.service
 
-E copie e cole esse script no seu arquivo cash.service:
+E copie e cole esse script no seu arquivo projeto.service:
 
 ```
 [Unit]
@@ -235,17 +235,17 @@ WantedBy=multi-user.target
 
 Agora execute o serviço main.index:
 
-### sudo systemctl start cash.service
+### sudo systemctl start projeto.service
 
-### sudo systemctl restart cash.service
+### sudo systemctl restart projeto.service
 
-Caso altere alguma coisa no cash.service, faça:
+Caso altere alguma coisa no projeto.service, faça:
 
 ### sudo systemctl daemon-reload
 
-Caso queira iniciar automaticamente o serviço cash.service no booting da sua instância EC2, faça:
+Caso queira iniciar automaticamente o serviço projeto.service no booting da sua instância EC2, faça:
 
-### sudo systemctl enable cash.service
+### sudo systemctl enable projeto.service
 
 # Passo-11 (teste):
 
@@ -262,9 +262,9 @@ E o resultado será o que está na figura a seguir:
 
 Se você não viu a figura acima, faça o seguinte:
 
-### sudo systemctl stop cash.service [enter]
+### sudo systemctl stop projeto.service [enter]
 
-### sudo systemctl restart cash.service [enter]
+### sudo systemctl restart projeto.service [enter]
 
 # Passo-12:
 
