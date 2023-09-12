@@ -122,15 +122,15 @@ Após a instalação com sucesso, vai aparecer essa tela, você marca a primeira
 Crie um diretório e subdiretório dentro dele:
 
 DIRETÓRIO
-### mkdir cashman-flask-project [enter]
+### mkdir projeto-flask [enter]
 
 SUBDIRETÓRIO DO DIRETÓRIO
-### mkdir cashman [enter]
+### mkdir main [enter]
 
 # Passo-05:
 
 Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
-Daqui para frente, mantenha-se no path **cashman-flask-project/**
+Daqui para frente, mantenha-se no path **projeto-flask/**
 O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
 ### python3 -m venv venv
@@ -151,7 +151,7 @@ Instale o Flask no seu ambiente virtual:
 
 # Passo-08:
 
-Cuidado! Agora você precisa entrar na subpasta **(venv)cashman-flask-project/cashman** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)cashman-flask-project/**
+Cuidado! Agora você precisa entrar na subpasta **(venv)projeto-flask/cashman** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)projeto-flask/**
 
 ### sudo nano index.py
 
@@ -202,7 +202,7 @@ E o resultado será essa tela abaixo:
 
 
 # Passo-09:
-Atenção! Volte para **(venv)cashman-flask-project/**
+Atenção! Volte para **(venv)projeto-flask/**
 Agora vamos instalar o servidor python *gunicorn*:
 
 ### pip install gunicorn [enter]
@@ -223,8 +223,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/cashman-flask-project
-ExecStart=/home/ubuntu/cashman-flask-project/venv/bin/gunicorn -b localhost:8000 cashman.index:app
+WorkingDirectory=/home/ubuntu/projeto-flask
+ExecStart=/home/ubuntu/projeto-flask/venv/bin/gunicorn -b localhost:8000 cashman.index:app
 Restart=always
 
 [Install]
