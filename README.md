@@ -151,7 +151,7 @@ Instale o Flask no seu ambiente virtual:
 
 # Passo-08:
 
-Cuidado! Agora você precisa entrar na subpasta **(venv)projeto-flask/cashman** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)projeto-flask/**
+Cuidado! Agora você precisa entrar na subpasta **(venv)projeto-flask/main** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)projeto-flask/**
 
 ### sudo nano index.py
 
@@ -217,14 +217,14 @@ E copie e cole esse script no seu arquivo cash.service:
 
 ```
 [Unit]
-Description=Gunicorn serve para instanciar uma simples aplicacao cashman.service
+Description=Gunicorn serve para instanciar uma simples aplicacao main.service
 After=network.target
 
 [Service]
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/projeto-flask
-ExecStart=/home/ubuntu/projeto-flask/venv/bin/gunicorn -b localhost:8000 cashman.index:app
+ExecStart=/home/ubuntu/projeto-flask/venv/bin/gunicorn -b localhost:8000 main.index:app
 Restart=always
 
 [Install]
@@ -233,7 +233,7 @@ WantedBy=multi-user.target
 
 # Passo-11:
 
-Agora execute o serviço cashman.index:
+Agora execute o serviço main.index:
 
 ### sudo systemctl start cash.service
 
