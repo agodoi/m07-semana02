@@ -117,7 +117,7 @@ Após a instalação com sucesso, vai aparecer essa tela, você marca a primeira
 </picture>
 
 
-# Passo-04:
+# Passo-04: 
 
 Crie um diretório e subdiretório dentro dele:
 
