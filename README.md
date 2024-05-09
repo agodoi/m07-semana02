@@ -124,6 +124,8 @@ Crie um diretório e subdiretório dentro dele:
 DIRETÓRIO
 ### mkdir projeto-flask [enter]
 
+Entre no diretóario **projeto-flask** e crie o 
+
 SUBDIRETÓRIO DO DIRETÓRIO
 ### mkdir main [enter]
 
