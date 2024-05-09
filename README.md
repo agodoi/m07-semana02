@@ -13,7 +13,7 @@ Uma região é uma soma de zonas.
 
 Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de 1 ms, têm sistemas redundantes e há uma distância entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade. 
 
-Cada região AWS é totalmente independente, isto é, é projetada para ser isolada das outras regiões da AWS. Esse design proporciona o máximo de tolerância a falhas e estabilidade possível. Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase de construção: Canadá, Israel, Nova Zelândia e Tailândia. E de zonas, são 99 ao todo.
+Cada região AWS é totalmente independente, isto é, é projetada para ser isolada das outras regiões da AWS. Esse design proporciona o máximo de tolerância a falhas e estabilidade possível. Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase de construção: Canadá, Israel, Nova Zelândia e Tailândia. E de zonas, são 99 ao todo, porque dentro de uma região, tem-se vários zonas.
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png">
