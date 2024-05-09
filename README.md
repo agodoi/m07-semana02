@@ -127,6 +127,8 @@ DIRETÓRIO
 SUBDIRETÓRIO DO DIRETÓRIO
 ### mkdir main [enter]
 
+#### Resultado: projeto-flask/main
+
 # Passo-05:
 
 Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
