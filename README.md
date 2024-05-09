@@ -51,7 +51,7 @@ Nessa aula, vamos usar uma instância EC2 com:
 
 * NGINGX (deployment):
 
-  É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Veja o gráfico para entender sua arquitetura.
+  É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Volte no gráfico para entender a arquitetura que vamos montar.
 
 # Objetivo dessa prática
 
