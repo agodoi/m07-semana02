@@ -127,7 +127,7 @@ DIRETÓRIO
 SUBDIRETÓRIO DO DIRETÓRIO
 ### mkdir main [enter]
 
-#### Resultado: projeto-flask/main
+### Resultado: projeto-flask/main
 
 # Passo-05:
 
