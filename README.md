@@ -49,9 +49,9 @@ Nessa aula, vamos usar uma instância EC2 com:
 
   É uma abreviação de Green Unicorn. Trata-se de um servidor HTTP WSGI (Web Server Gateway Interface) para Python. Ele é usado para executar aplicativos da web Python, como aplicativos Django ou Flask, em produção de forma eficiente e confiável. Para executar um aplicativo Python com o Gunicorn, você normalmente precisa criar um arquivo de configuração, especificando o número de processos que o servidor deve utilizar. O Gunicorn então gerencia esses processos e cuida da comunicação entre o servidor da web e o aplicativo Python. Esse aplicativo será chamado de *index.py* mais para frente.
 
-* NGINGX (deployment):
+* NGINX (deployment):
 
-  É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Volte no gráfico para entender a arquitetura que vamos montar.
+É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Volte no gráfico para entender a arquitetura que vamos montar ou acesse mais informações sobre [o que é NGINX aqui](https://github.com/agodoi/EC2-RESTFull/blob/main/nginx/readme.md)
 
 # Objetivo dessa prática
 
