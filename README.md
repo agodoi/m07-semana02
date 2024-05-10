@@ -107,9 +107,10 @@ Atualize sua instância EC2 com os seguintes comandos:
 
 ### sudo apt-get update [enter]
 
-### sudo apt-get install python3.10-venv [enter]
+### sudo apt-get install python3.12-venv [enter]
 
-Após a instalação com sucesso, vai aparecer essa tela, você marca a primeira opção e confirma com [enter].
+Caso após a instalação com sucesso, aparecer essa tela abaixo, você marca a primeira opção e confirma com [enter].
+Se não aparecer, tudo bem, segue em frente.
 
 <picture>
    <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png">
