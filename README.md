@@ -70,11 +70,11 @@ Crie uma instância EC2 no console AWS (particular ou acadêmica) com as seguint
 ### Free tier (nível gratuito)
 ### Salve a chave SSH (sugestão de nome "FlaskServerUbuntu") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
 ### Sistema operacional Ubuntu
-### Regras de entrada:
-#### * HTTPS
-#### * HTTP
-#### * SSH
-#### * TCP personalizado, digite porta 8000 (importante esse passo), deixe como "qualquer lugar"
+### Regras de entrada (clique no botão EDITAR)
+#### * HTTPS (mantenha como está)
+#### * HTTP (mantenha como está)
+#### * SSH (mantenha como está)
+#### * Acrescente uma conexão do tipo TCP Custom, digite porta 8000 (importante esse passo), deixe como "any wherer".
 
 # Passo-02
 
