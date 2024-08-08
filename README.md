@@ -95,16 +95,29 @@ Vamos criar uma API usando Flask que será executado no ambiente *gunicorn* pela
 
 # Passo-01
 
-Crie uma instância EC2 no console AWS (particular ou acadêmica) com as seguintes características:
+Crie uma instância EC2 no console AWS com as seguintes características:
 
-### Free tier (nível gratuito)
-### Salve a chave SSH (sugestão de nome "FlaskServerUbuntu") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
-### Sistema operacional Ubuntu
-### Regras de entrada (clique no botão EDITAR)
-#### * HTTPS (mantenha como está)
-#### * HTTP (mantenha como está)
-#### * SSH (mantenha como está)
-#### * Acrescente uma conexão do tipo TCP Custom, digite porta 8000 (importante esse passo), deixe como "any wherer".
+1.1) Sugestão de nome ```EC2-flask```
+
+1.2) Sistema operacional Ubuntu
+
+1.3) Salve a chave SSH (sugestão de nome "EC2-flask") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
+
+1.4) Configurações de Rede (clique no botão EDITAR) e faça:
+
+1.4.1) Clique no botão **Adicionar regra de segurança** que está na parte final da opção **Configurações de Rede**
+
+1.4.2) Escolha em **Tipo** HTTPS e Tipo de Origem **Qualquer lugar**
+
+1.4.3) Clique novamente em **Adicionar regra de segurança** e adicione **TCP personalizado**, **Qualquer lugar**, digite 8000 no campo **Intervalo de portas**.
+
+1.5) Confirme tudo no botão laranja **Executar instância** e aguarde o EC2 subir.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
+   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
+</picture>
+
 
 # Passo-02
 
@@ -152,7 +165,6 @@ Se não aparecer, tudo bem, segue em frente.
 
 Nessa etapa, vamos criar um **diretório** e um **subdiretório** dentro dele:
 
-
 ### Para criar o diretório: ```mkdir projeto-flask``` [enter]
 
 ### Entre no diretóario **projeto-flask** e crie o subdiretório: projeto-flask\ ```mkdir main``` [enter]
@@ -163,15 +175,17 @@ Nessa etapa, vamos criar um **diretório** e um **subdiretório** dentro dele:
 
 Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
 Daqui para frente, mantenha-se no path **projeto-flask/**
+
 O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
-### ```python3 -m venv venv```
+
+### comando no subdiretório projeto-flask\: ```python3 -m venv venv```
 
 # Passo-06:
 
 Vamos ativar o seu ambiente virtual:
 
-### source venv/bin/activate [enter]
+### projeto-flask\ ```source venv/bin/activate``` [enter]
 
 O resultado será o surgimento do (venv) no início do seu path raiz.
 
