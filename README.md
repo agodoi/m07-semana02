@@ -228,15 +228,13 @@ if __name__ == "__main__":
     app.run()
 ```
 
-# Passo-08 (teste):
-
 Caso queira conferir como ficou a sua edição, faça:
 
-8.1) Comando ```cat index.py``` [enter]
+8.3) Comando ```cat index.py``` [enter]
 
 Caso queira testar o seu código index.py, faça:
 
-8.2) Comando ```python3 index.py``` [enter]
+8.4) Comando ```python3 index.py``` [enter]
 
 E o resultado será essa tela abaixo:
 
