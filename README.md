@@ -165,7 +165,7 @@ Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você 
 Daqui para frente, mantenha-se no path **projeto-flask/**
 O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
-### python3 -m venv venv
+### ```python3 -m venv venv```
 
 # Passo-06:
 
