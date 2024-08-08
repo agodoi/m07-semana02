@@ -425,4 +425,11 @@ c) Selecione o método **POST** e cole seu link EC2 acrescido de **/incomes**
 
 d) Clique em SEND e depois vá na aba do seu navegador onde está o link EC2/incomes e atualize a tela, e você terá o resultado do POST que acabou de fazer
 
-e) Você pode fazer um GET nesse ambiente que retornará os POST que foram feitos
+e) Você pode fazer um GET nesse ambiente Postman que retornará os POST que você acabou de fazer.
+
+
+## FIM!
+
+Você acabou de fazer uma aplicação API usando uma arquitetura profissional que usa o NGINX, Flask com Gunicorn!
+
+
