@@ -153,11 +153,13 @@ Se não aparecer, tudo bem, segue em frente.
 Crie um diretório e subdiretório dentro dele:
 
 DIRETÓRIO
+
 ### mkdir projeto-flask [enter]
 
-Entre no diretóario **projeto-flask** e crie o 
+### Entre no diretóario **projeto-flask** e crie o 
 
 SUBDIRETÓRIO DO DIRETÓRIO
+
 ### mkdir main [enter]
 
 ### Resultado: projeto-flask/main
