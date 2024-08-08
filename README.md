@@ -70,18 +70,20 @@ Nessa aula, vamos usar uma instância EC2 com:
   Volte no gráfico para entender a arquitetura que vamos montar ou acesse mais informações sobre [o que é NGINX aqui](https://github.com/agodoi/EC2-RESTFull/blob/main/nginx/readme.md). 
 
 
-* Flask (backend):
-  
-  Framework que utiliza a linguagem Python para criar aplicativos Web. Muito útil para a criação de API RESTful, que por sua vez, utiliza os métodos padrão do protocolo HTTP (como GET, POST, PUT, DELETE) ou CRUD (Create, Read, Update and Delete). [Clique aqui](https://github.com/agodoi/EC2-RESTFull/tree/main/flask) para conhecer um exemplo didático.
-
 * Gunicorn (backend):
 
-  É uma abreviação de Green Unicorn. Trata-se de um servidor HTTP WSGI (Web Server Gateway Interface) para Python. Ele é usado para executar aplicativos da web Python, como aplicativos Django ou Flask, em produção de forma eficiente e confiável. Para executar um aplicativo Python com o Gunicorn, você normalmente precisa criar um arquivo de configuração, especificando o número de processos que o servidor deve utilizar. O Gunicorn então gerencia esses processos e cuida da comunicação entre o servidor da web e o aplicativo Python. Esse aplicativo será chamado de *index.py* mais para frente. [Clique aqui](https://github.com/agodoi/EC2-RESTFull/tree/main/gunicorn) para conhecer um exemplo didático.
+  É uma abreviação de Green Unicorn. Trata-se de um servidor HTTP WSGI (Web Server Gateway Interface) para Python. Ele é um ambiente executável de aplicativos da web Python, como aplicativos Django ou Flask. No exemplo de hoje, vamos usar o Flask.
+
+  Para executar um aplicativo Python com o Gunicorn, você normalmente precisa criar um arquivo de configuração, especificando o número de processos que o servidor deve utilizar. O Gunicorn então gerencia esses processos e cuida da comunicação entre o servidor da web e o aplicativo Python. Esse aplicativo será chamado de *index.py* mais para frente. [Clique aqui](https://github.com/agodoi/EC2-RESTFull/tree/main/gunicorn) para conhecer um exemplo didático.
+
+* Flask (backend):
+  
+  É uma biblioteca, um framework que utiliza a linguagem Python para criar aplicativos Web. Muito útil para a criação de API RESTful, que por sua vez, utiliza os métodos padrão do protocolo HTTP (como GET, POST, PUT, DELETE) ou CRUD (Create, Read, Update and Delete). No Flask vai o código Python que será executado no ambiente Gunicorn.
 
 
 # Objetivo dessa prática
 
-Vamos criar uma API usando Flask que será executado com a ajuda do *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
+Vamos criar uma API usando Flask que será executado no ambiente *gunicorn* pela porta 8000 e estará roteado pelo *nginx* pela porta 80.
 
 # Pré-requisitos
 
