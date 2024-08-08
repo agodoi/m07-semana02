@@ -1,19 +1,35 @@
 # Semana 01 - Arquitetura de Computação em Nuvem com API
 
-Neste encontro iremos apresentar os principais serviços utilizados e o funcionamento de uma aplicação simples na nuvem. Desta forma conseguimos compreender como podemos distribuir, armazenar e analisar dados na nuvem eficientemente.
+Neste encontro iremos apresentar os principais serviços utilizados e o funcionamento de uma aplicação simples na nuvem. 
+
+Desta forma conseguimos compreender como podemos distribuir, armazenar e analisar dados na nuvem eficientemente.
 
 Iremos também abordar as regiões e como escolher adequadamente o local de armazenamento dos seus dados e dos clientes de forma segura e confiável.
 
-Deve-se resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da instrução anterior, e realizar diversas requisições na API.
+Vamos resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da AWS, e realizar requisições na API.
 
+
+# Ganhos no Projeto
+
+Qualquer aplicação Web pode aproveitar essa arquitetura que vamos discutir, mas em especial, no projeto da Vivo, as consultas no banco de estoque terão maior fluidez e segurança.
+
+Vamos entender como isso funciona?
 
 # O que é região e zona AWS?
 
 Uma região é uma soma de zonas.
 
-Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de 1 ms, têm sistemas redundantes e há uma distância entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade. 
+Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de até 1 ms, além de ter sistemas redundantes.
 
-Cada região AWS é totalmente independente, isto é, é projetada para ser isolada das outras regiões da AWS. Esse design proporciona o máximo de tolerância a falhas e estabilidade possível. Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase de construção: Canadá, Israel, Nova Zelândia e Tailândia. E de zonas, são 99 ao todo, porque dentro de uma região, tem-se vários zonas.
+Há uma distância com probabilidade calculada e segura entre elas para reduzir o risco de um evento natural que possa afetar mais de uma zona de disponibilidade. 
+
+Cada região AWS é totalmente independente, isto é, é projetada para ser isolada das outras regiões da AWS. 
+
+Esse design proporciona o máximo de tolerância a falhas e estabilidade possível. 
+
+Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase final de construção: Canadá, Israel, Nova Zelândia e Tailândia. 
+
+E de zonas, são 99 ao todo, porque dentro de uma região, tem-se vários zonas.
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png">
@@ -23,7 +39,9 @@ Cada região AWS é totalmente independente, isto é, é projetada para ser isol
 
 # Qual a melhor região?
 
-Para definir a melhor região, deve-se usar a calculadora da AWS para simular os preços, pois depende da sua arquitetura e do SLA (Service Level Agreement) de cada componente (que basicamente é o nível de disponibilidade que ele oferece), a resiliência e a tolerência à falhas oferecidas. Outra questão é a LGPD que a depender do seu negócio, exige que os dados pessoais e sensíveis dos usuários envolvidos estejam no território brasileiro. A AWS sabendo disso, pode cobrar valores maiores devido à exigência dos dados permanecerem sempre numa mesma região.
+Para definir a melhor região, deve-se usar a calculadora da AWS para simular os preços, pois depende da sua arquitetura e do SLA (Service Level Agreement) de cada componente (que basicamente é o nível de disponibilidade que ele oferece), a resiliência e a tolerência à falhas oferecidas. 
+
+Outra questão é a LGPD que a depender do seu negócio, exige que os dados pessoais e sensíveis dos usuários envolvidos estejam no território brasileiro. A AWS sabendo disso, pode cobrar valores maiores devido à exigência dos dados permanecerem sempre numa mesma região.
 
 
 <picture>
