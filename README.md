@@ -9,9 +9,11 @@ Iremos também abordar as regiões e como escolher adequadamente o local de arma
 Vamos resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da AWS, e realizar requisições na API.
 
 
-# Ganhos no Projeto
+# Contexto e Ganhos no Projeto da Vivo
 
-Qualquer aplicação Web pode aproveitar essa arquitetura que vamos discutir, mas em especial, no projeto da Vivo, as consultas no banco de estoque terão maior fluidez e segurança.
+Sabemos que o problema é sincronizar o estoque de telefones da Vivo entre as centenas de loja.
+
+A sua solução será uma aplicação aplicação Web e que pode aproveitar essa arquitetura que vamos discutir, mas em especial, no projeto da Vivo, as consultas no banco de estoque terão maior fluidez e segurança.
 
 Vamos entender como isso funciona?
 
