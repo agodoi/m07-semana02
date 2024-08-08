@@ -114,8 +114,8 @@ Crie uma instância EC2 no console AWS com as seguintes características:
 1.5) Confirme tudo no botão laranja **Executar instância** e aguarde o EC2 subir.
 
 <picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/semana-01-fig01.png">
+   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/semana-01-fig01.png)">
 </picture>
 
 
