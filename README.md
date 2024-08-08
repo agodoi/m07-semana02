@@ -101,15 +101,15 @@ Crie uma instância EC2 no console AWS com as seguintes características:
 
 1.2) Sistema operacional Ubuntu
 
-1.3) Salve a chave SSH (sugestão de nome "EC2-flask") no seu Desktop (deixe no diretório Desktop). Chave tipo PEM.
+1.3) Salve a chave SSH na pasta **download** para evitar problemas de restrição de arquivo do Windows. Sugestão de nome "EC2-flask". Chave tipo PEM.
 
 1.4) Configurações de Rede (clique no botão EDITAR) e faça:
 
 1.4.1) Clique no botão **Adicionar regra de segurança** que está na parte final da opção **Configurações de Rede**
 
-1.4.2) Escolha em **Tipo** HTTPS e Tipo de Origem **Qualquer lugar**
+1.4.2) Escolha em **Tipo** bote HTTPS e Tipo de Origem bote **Qualquer lugar**
 
-1.4.3) Clique novamente em **Adicionar regra de segurança** e adicione **TCP personalizado**, **Qualquer lugar**, digite 8000 no campo **Intervalo de portas**.
+1.4.3) Clique novamente em **Adicionar regra de segurança** e adicione **TCP personalizado**, **Qualquer lugar**, digite 8000 no campo **Intervalo de portas** (apague o 0 e coloque 8000).
 
 1.5) Confirme tudo no botão laranja **Executar instância** e aguarde o EC2 subir.
 
@@ -148,11 +148,11 @@ e você estará parado num diretório raiz do tipo **ubuntu@ip-172-31-93-207:~$*
 
 Atualize sua instância EC2 com os seguintes comandos:
 
-### sudo apt-get update [enter]
+3.1) Dê o comando ```sudo apt-get update``` [enter]
 
-### sudo apt-get install python3.12-venv [enter]
+3.2) Dê o comando ```sudo apt-get install python3.12-venv``` [enter]
 
-Caso após a instalação com sucesso, aparecer essa tela abaixo, você marca a primeira opção e confirma com [enter].
+Caso após a instalação com sucesso, apareça essa tela abaixo, você marca a primeira opção e confirma com [enter].
 Se não aparecer, tudo bem, segue em frente.
 
 <picture>
@@ -165,41 +165,40 @@ Se não aparecer, tudo bem, segue em frente.
 
 Nessa etapa, vamos criar um **diretório** e um **subdiretório** dentro dele:
 
-### Para criar o diretório: ```mkdir projeto-flask``` [enter]
+4.1) Crie o diretório: ```mkdir projeto-flask``` [enter]
 
-### Entre no diretóario **projeto-flask** e crie o subdiretório: projeto-flask\ ```mkdir main``` [enter]
+4.2) Entre no diretóario **projeto-flask** e crie o subdiretório: projeto-flask\ ```mkdir main``` [enter]
 
-### Resultado: projeto-flask/main
+4.3) Esteja no diretório raiz **projeto-flask/**
 
 # Passo-05:
 
-Instale um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
+Vamos instalar um ambiente virtual chamado *venv* (segundo venv do comando) para você criar as dependências python exclusivas para essa prática.
 Daqui para frente, mantenha-se no path **projeto-flask/**
 
 O -m indica que você deseja executar um módulo específico no python3, que nesse caso, é o venv (primeiro venv do comando)
 
-
-### comando no subdiretório projeto-flask\: ```python3 -m venv venv```
+5.1) Comando no diretório raiz projeto-flask\: ```python3 -m venv venv```
 
 # Passo-06:
 
-Vamos ativar o seu ambiente virtual:
+Vamos ativar o seu ambiente virtual chamado **venv**:
 
-### projeto-flask\ ```source venv/bin/activate``` [enter]
+6.1) Na raiz **projeto-flask\**: ```source venv/bin/activate``` [enter]
 
-O resultado será o surgimento do (venv) no início do seu path raiz.
+O resultado será o surgimento do (venv) no início do seu path raiz. Exemplo: **(venv) ubuntu@ip-172-31-32-65:~/projeto-flask$**
 
 # Passo-07:
 
 Instale o Flask no seu ambiente virtual:
 
-### pip install flask
+7.1) Na raiz **(venv) ubuntu@ip-172-31-32-65:~/projeto-flask$** ```pip install flask```
 
 # Passo-08:
 
-Cuidado! Agora você precisa entrar na subpasta **(venv)projeto-flask/main** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)projeto-flask/**
+8.1) Cuidado! Agora você precisa entrar na subpasta **(venv)projeto-flask/main** para criar e editar a aplicação que se chamará **index.py**. Depois, retorne para **(venv)projeto-flask/**
 
-### sudo nano index.py
+8.2) Dê o comando ```sudo nano index.py``` na subpasta
 
 E adicione o seguinte código dentro do **index.py**. Copie e cole esse código, cuidado com os aninhamentos. Dê um Ctrl+S para Salvar e Ctrl+X para sair do editor.
 
@@ -233,11 +232,11 @@ if __name__ == "__main__":
 
 Caso queira conferir como ficou a sua edição, faça:
 
-### cat index.py [enter]
+8.1) Comando ```cat index.py``` [enter]
 
 Caso queira testar o seu código index.py, faça:
 
-### python3 index.py [enter]
+8.2) Comando ```python3 index.py``` [enter]
 
 E o resultado será essa tela abaixo:
 
@@ -248,16 +247,16 @@ E o resultado será essa tela abaixo:
 
 
 # Passo-09:
-Atenção! Volte para **(venv)projeto-flask/**
-Agora vamos instalar o servidor python *gunicorn*:
 
-### pip install gunicorn [enter]
+9.1) Atenção! Volte para **(venv)projeto-flask/** dando o comando ```cd ..```. Agora vamos instalar o servidor python *gunicorn*:
+
+9.2)Comando ```pip install gunicorn``` [enter]
 
 # Passo-10:
 
 Agora vamos criar o script de boot no seu EC2: 
 
-### sudo nano /etc/systemd/system/projeto.service
+   10.1) Comando: ```sudo nano /etc/systemd/system/projeto.service```
 
 E copie e cole esse script no seu arquivo projeto.service:
 
@@ -281,23 +280,21 @@ WantedBy=multi-user.target
 
 Agora execute o serviço main.index:
 
-### sudo systemctl start projeto.service
+11.1) Comando: ```sudo systemctl start projeto.service```
 
-### sudo systemctl restart projeto.service
+11.2) Comando: ```sudo systemctl restart projeto.service```
 
 Caso altere alguma coisa no projeto.service, faça:
 
-### sudo systemctl daemon-reload
+11.3) Comando opcional nessa etapa: ```sudo systemctl daemon-reload```
 
 Caso queira iniciar automaticamente o serviço projeto.service no booting da sua instância EC2, faça:
 
-### sudo systemctl enable projeto.service
-
-# Passo-11 (teste):
+11.4) Comando opcinoal nessa etapa: ```sudo systemctl enable projeto.service```
 
 Caso queira testar localmente como está sua aplicação, faça:
 
-### curl localhost:8000/incomes
+11.5) É bão fazer esse teste: ```curl localhost:8000/incomes```
 
 E o resultado será o que está na figura a seguir:
 
@@ -306,19 +303,19 @@ E o resultado será o que está na figura a seguir:
    <img alt="Tela-03" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png)">
 </picture>
 
-Se você não viu a figura acima, faça o seguinte:
+Se você não viu a figura acima, faça o seguinte: senta e chora!
 
-### sudo systemctl stop projeto.service [enter]
+11.6) Comando: ```sudo systemctl stop projeto.service``` [enter]
 
-### sudo systemctl restart projeto.service [enter]
+11.7) Comando: ```sudo systemctl restart projeto.service``` [enter]
 
 # Passo-12:
 
 Falta instalar o NGINX no seu ambiente virtual, então faça:
 
-### sudo apt install nginx
+12.1) Comando: ```sudo apt install nginx```
 
-E você terá essa tela abaixo, marque a opção e confirme com [enter]
+Caso você terá essa tela abaixo, marque a opção e confirme com [enter]. Caso não, siga em frente que está tudo bem.
 
 <picture>
    <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png">
@@ -330,7 +327,7 @@ E você terá essa tela abaixo, marque a opção e confirme com [enter]
 
 Agora vamos ajustar o servidor NGINX para endereçar a nossa aplicação:
 
-### sudo nano /etc/nginx/sites-available/default
+13.1) Comando: ```sudo nano /etc/nginx/sites-available/default``` na raiz do projeto.
 
 Adicione essas linhas logo no começo, após os comentários
 ```
@@ -365,13 +362,15 @@ location / {
         }
 ```
 
+13.2) Salve e saia desse arquivo.
+
 # Passo-14:
 
 Vamos iniciar o servidor:
 
-### sudo systemctl start nginx
+14.1) Comando ```sudo systemctl start nginx```
 
-### sudo systemctl restart nginx
+14.2) Comando ```sudo systemctl restart nginx```
 
 # Passo-15:
 
@@ -381,7 +380,7 @@ Copie seu link externo do EC2 (que está no console da AWS, em EC2, na opção *
 
 Exemplo: **ec2-54-161-205-18.compute-1.amazonaws.com/incomes**
 
-### Mas atenção: seu endereço do navegador não pode ter HTTPS e sim, HTTP, pois nossa aplicação não está usando HTTP criptografado. Cuidado com isso, pois vai parecer que não está funcionando direito.
+### Um ponto de atenção. Se você esqueceu de Adicionar Regra de Segurança HTTPS na ETAPA 01, seu endereço do navegador não pode ter HTTPS e sim, HTTP, pois sua aplicação não está usando HTTP criptografado. Cuidado com isso, pois vai parecer que não está funcionando direito.
 
 Quando fizer isso, você fará um GET e deverá retornar o seguinte:
 
