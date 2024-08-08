@@ -59,6 +59,17 @@ Outra questão é a LGPD que a depender do seu negócio, exige que os dados pess
 
 Nessa aula, vamos usar uma instância EC2 com:
 
+* NGINX (deployment):
+
+   É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico.
+
+  A função dele é receber as requisições HTTP do seu site e encaminhá-las para uma porta do Gunicorn.
+
+  Ele também é um proxy reverso, o que significa que ele pode encaminhar solicitações de clientes para um ou mais servidores de backend (por exemplo, servidores de aplicação como Node.js, Python, Ruby on Rails, etc.). Isso é útil para distribuir carga, aumentar a segurança e cacheamento (armazenar em cache respostas do servidor backend para reduzir a carga e acelerar o tempo de resposta).
+
+  Volte no gráfico para entender a arquitetura que vamos montar ou acesse mais informações sobre [o que é NGINX aqui](https://github.com/agodoi/EC2-RESTFull/blob/main/nginx/readme.md). 
+
+
 * Flask (backend):
   
   Framework que utiliza a linguagem Python para criar aplicativos Web. Muito útil para a criação de API RESTful, que por sua vez, utiliza os métodos padrão do protocolo HTTP (como GET, POST, PUT, DELETE) ou CRUD (Create, Read, Update and Delete). [Clique aqui](https://github.com/agodoi/EC2-RESTFull/tree/main/flask) para conhecer um exemplo didático.
@@ -67,9 +78,6 @@ Nessa aula, vamos usar uma instância EC2 com:
 
   É uma abreviação de Green Unicorn. Trata-se de um servidor HTTP WSGI (Web Server Gateway Interface) para Python. Ele é usado para executar aplicativos da web Python, como aplicativos Django ou Flask, em produção de forma eficiente e confiável. Para executar um aplicativo Python com o Gunicorn, você normalmente precisa criar um arquivo de configuração, especificando o número de processos que o servidor deve utilizar. O Gunicorn então gerencia esses processos e cuida da comunicação entre o servidor da web e o aplicativo Python. Esse aplicativo será chamado de *index.py* mais para frente. [Clique aqui](https://github.com/agodoi/EC2-RESTFull/tree/main/gunicorn) para conhecer um exemplo didático.
 
-* NGINX (deployment):
-
-   É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico. A função dele é receber as requisições do seu site e encaminhá-las para o Gunicorn. Volte no gráfico para entender a arquitetura que vamos montar ou acesse mais informações sobre [o que é NGINX aqui](https://github.com/agodoi/EC2-RESTFull/blob/main/nginx/readme.md).
 
 # Objetivo dessa prática
 
