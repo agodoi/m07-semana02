@@ -1,25 +1,28 @@
 # Semana 01 - Arquitetura de Computação em Nuvem com API
 
-Neste encontro iremos apresentar os principais serviços utilizados e o funcionamento de uma aplicação simples na nuvem. 
+Nesse encontro, teremos:
 
-Desta forma conseguimos compreender como podemos distribuir, armazenar e analisar dados na nuvem eficientemente.
+* Apresentação dos principais serviços utilizados em aplicações na nuvem.
+* Funcionamento de uma aplicação simples na nuvem.
+* Distribuição, armazenamento e análise eficiente de dados na nuvem.
+* Escolha adequada de regiões de armazenamento de dados, com foco em segurança e confiabilidade.
+* Revisão do conceito de API.
+* Prática com Flask (aplicação mínima) hospedada em uma instância EC2 da AWS.
+* Realização de requisições na API desenvolvida.
 
-Iremos também abordar as regiões e como escolher adequadamente o local de armazenamento dos seus dados e dos clientes de forma segura e confiável.
-
-Vamos resgatar o conceito de API aplicando uma prática usando FLASK (minimal application), utilizando o EC2 da AWS, e realizar requisições na API.
-
-
-# Contexto e Ganhos no Projeto da Vivo
-
-Sabemos que o problema é sincronizar o estoque de telefones da Vivo entre as centenas de loja.
-
-A sua solução será uma aplicação aplicação Web e que pode aproveitar essa arquitetura que vamos discutir, mas em especial, no projeto da Vivo, as consultas no banco de estoque terão maior fluidez e segurança.
-
-Vamos entender como isso funciona?
+# Contexto e Ganhos no Projeto da PulseStage/BCG X - Boston Consulting Group
+ 
+* Sabemos que o problema é desenvolver uma plataforma em nuvem escalável para a venda de ingressos online.
+* O projeto da PulseStage exige alta disponibilidade, escalabilidade horizontal e segurança, além da conectividade via SSH.
+* A prática com EC2 + Flask + Gunicorn + NGINX ensina a base de uma aplicação desacoplada, modular e escalável.
+* O uso do NGINX como proxy reverso e do Gunicorn como WSGI server mostra como separar responsabilidades entre camadas da aplicação, essencial para manter performance durante picos de acesso (exatamente o problema central da PulseStage).
+* A API construída com Flask simula um microsserviço. A prática de criar endpoints REST e manipular requisições HTTP é fundamental para a criação de serviços distribuídos e independentes — base da arquitetura esperada no projeto da PulseStage.
+* Nessa aula, não vamos ver Docker/Kubernetes diretamente, mas essa instrução estrutura a aplicação de forma modular e organizada, facilitando a containerização e orquestração futura.
+* A aplicação pode ser testada via Postman e curl, servindo como base para testes de carga iniciais. Esse é o primeiro passo para implementar as etapas descritas na Prova de Conceito da PulseStage (manipular fila, manter operação sob stress, etc.).
 
 # O que é região e zona AWS?
 
-Uma região é uma soma de zonas.
+Uma região é uma soma de zonas. E zonas são endereços de data centers físicos.
 
 Em uma região da AWS, temos diferentes zonas de disponibilidade, essas zonas de disponibilidade estão a uma distância que permita latências de até 1 ms, além de ter sistemas redundantes.
 
@@ -39,7 +42,7 @@ E de zonas, são 99 ao todo, porque dentro de uma região, tem-se vários zonas.
 </picture>
 
 
-# Qual a melhor região?
+# Qual o melhor custo/benefício de cada região?
 
 Para definir a melhor região, deve-se usar a calculadora da AWS para simular os preços, pois depende da sua arquitetura e do SLA (Service Level Agreement) de cada componente (que basicamente é o nível de disponibilidade que ele oferece), a resiliência e a tolerência à falhas oferecidas. 
 
@@ -63,11 +66,14 @@ Nessa aula, vamos usar uma instância EC2 com:
 
 * NGINX (deployment):
 
-   É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famoso entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é altamente elástico.
+   É um servidor web open source de alta performance que entrega o conteúdo estático de um site de forma rápida e fácil de configurar. É famosinho entre grandes empresas da área de TI e concorre direto com o Apache. Não é preciso se preocupar com a quantidade de conexões simultâneas (concorrência) feitas no site, pois ele é automaticamente elástico.
 
   A função dele é receber as requisições HTTP do seu site e encaminhá-las para uma porta do Gunicorn.
 
-  Ele também é um proxy reverso, o que significa que ele pode encaminhar solicitações de clientes para um ou mais servidores de backend (por exemplo, servidores de aplicação como Node.js, Python, Ruby on Rails, etc.). Isso é útil para distribuir carga, aumentar a segurança e cacheamento (armazenar em cache respostas do servidor backend para reduzir a carga e acelerar o tempo de resposta).
+  Ele também é um proxy reverso, o que significa que ele está do lado do servidor e não do lado do cliente, e pode encaminhar solicitações de clientes para um ou mais servidores de backend (por exemplo, servidores de aplicação como Node.js, Python, Ruby on Rails, etc.). Isso é útil para distribuir carga, aumentar a segurança e cacheamento (armazenar em cache respostas do servidor backend para reduzir a carga e acelerar o tempo de resposta).
+
+* Proxy direto: você pede comida a um garçom, e ele faz o pedido em seu nome na cozinha.
+* Proxy reverso: você faz o pedido no balcão, mas alguém da cozinha organiza e envia os pedidos certos ao cozinheiro adequado, sem que você veja o que acontece lá dentro.
 
   Volte no gráfico para entender a arquitetura que vamos montar ou acesse mais informações sobre [o que é NGINX aqui](https://github.com/agodoi/EC2-RESTFull/blob/main/nginx/readme.md). 
 
