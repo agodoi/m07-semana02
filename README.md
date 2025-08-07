@@ -37,12 +37,7 @@ Atualmente, a AWS possui 31 regiões no mundo, mas existe +4 em fase final de co
 E de zonas, são 99 ao todo, porque dentro de uma região, tem-se vários zonas.
 
 
-<img src="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png" width="500">
-
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="">
-   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png)">
-</picture>
+<img src="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png" width="600">
 
 
 # Qual o melhor custo/benefício de cada região?
