@@ -109,10 +109,8 @@ Crie uma instância EC2 no console AWS com as seguintes características:
 
 1.5) Confirme tudo no botão laranja **Executar instância** e aguarde o EC2 subir.
 
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/semana-01-fig01.png">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/semana-01-fig01.png)">
-</picture>
+
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/semana-01-fig01.png" width="600">
 
 
 # Passo-02
@@ -151,11 +149,7 @@ Atualize sua instância EC2 com os seguintes comandos:
 Caso após a instalação com sucesso, apareça essa tela abaixo, você marca a primeira opção e confirma com [enter].
 Se não aparecer, tudo bem, segue em frente.
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png">
-   <img alt="Tela-01" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png)">
-</picture>
-
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png" width="600">
 
 # Passo-04: 
 
@@ -234,11 +228,8 @@ Caso queira testar o seu código index.py, faça:
 
 E o resultado será essa tela abaixo:
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-02.png">
-   <img alt="Tela-02" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-02.png)">
-</picture>
 
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-02.png" width="600">
 
 # Passo-09:
 
@@ -292,10 +283,7 @@ Caso queira testar localmente como está sua aplicação, faça:
 
 E o resultado será o que está na figura a seguir:
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png">
-   <img alt="Tela-03" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png)">
-</picture>
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-03.png" width="600">
 
 Se você não viu a figura acima, faça o seguinte: senta e chora!
 
@@ -311,11 +299,8 @@ Falta instalar o NGINX no seu ambiente virtual, então faça:
 
 Caso você terá essa tela abaixo, marque a opção e confirme com [enter]. Caso não, siga em frente que está tudo bem.
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png">
-   <img alt="Tela-04" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png)">
-</picture>
 
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-04.png" width="600">
 
 # Passo-13:
 
@@ -378,19 +363,15 @@ Exemplo: **ec2-54-161-205-18.compute-1.amazonaws.com/incomes**
 
 Quando fizer isso, você fará um GET e deverá retornar o seguinte:
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-05.png">
-   <img alt="Tela-05" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-05.png)">
-</picture>
+
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-05.png" width="600">
 
 # Passo-16:
 
 Agora vamos fazer testes usando o https://www.postman.com/ (você terá que abrir uma conta, é gratuito).
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-06.png">
-   <img alt="Tela-06" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-06.png)">
-</picture>
+
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-06.png" width="600">
 
 Dentro do Postman, crie um novo **My Workspace**, coloque um nome que desejar
 
@@ -412,10 +393,7 @@ b) Clique em **Body** e preencha com json abaixo e clique em **raw**
 
 c) Selecione o método **POST** e cole seu link EC2 acrescido de **/incomes**
 
-<picture>
-   <source media="(prefers-color-scheme: light)"srcset="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-07.png">
-   <img alt="Tela-07" src="[TESTE](https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-07.png)">
-</picture>
+<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-07.png" width="600">
 
 d) Clique em SEND e depois vá na aba do seu navegador onde está o link EC2/incomes e atualize a tela, e você terá o resultado do POST que acabou de fazer
 
