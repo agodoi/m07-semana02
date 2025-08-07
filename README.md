@@ -50,10 +50,7 @@ Outra questão é a LGPD que a depender do seu negócio, exige que os dados pess
 
 # Aula Prática
 
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png">
-   <img alt="Arquitetura gunicorn" src="[YOUR-DEFAULT-IMAGE](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png)">
-</picture>
+<img src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*nFxyDwJ2DEH1G5PMKPMj1g.png" width="600">
 
 Nessa aula, vamos usar uma instância EC2 com:
 
