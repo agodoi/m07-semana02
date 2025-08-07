@@ -149,7 +149,7 @@ Atualize sua instância EC2 com os seguintes comandos:
 Caso após a instalação com sucesso, apareça essa tela abaixo, você marca a primeira opção e confirma com [enter].
 Se não aparecer, tudo bem, segue em frente.
 
-<img src="https://github.com/agodoi/EC2-RESTFull/blob/main/imgs/tela-01.png" width="600">
+<img src="https://github.com/agodoi/m07-semana02/blob/main/imgs/tela-01.png" width="600">
 
 # Passo-04: 
 
