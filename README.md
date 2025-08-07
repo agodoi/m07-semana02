@@ -46,12 +46,7 @@ Para definir a melhor região, deve-se usar a calculadora da AWS para simular os
 
 Outra questão é a LGPD que a depender do seu negócio, exige que os dados pessoais e sensíveis dos usuários envolvidos estejam no território brasileiro. A AWS sabendo disso, pode cobrar valores maiores devido à exigência dos dados permanecerem sempre numa mesma região.
 
-
-<picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://d2908q01vomqb2.cloudfront.net/4d134bc072212ace2df385dae143139da74ec0ef/2021/01/18/image005.jpg">
-   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://d2908q01vomqb2.cloudfront.net/4d134bc072212ace2df385dae143139da74ec0ef/2021/01/18/image005.jpg)">
-</picture>
-
+<img src="https://d2908q01vomqb2.cloudfront.net/4d134bc072212ace2df385dae143139da74ec0ef/2021/01/18/image005.jpg" width="600">
 
 # Aula Prática
 
