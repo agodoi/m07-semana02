@@ -105,7 +105,7 @@ Crie uma instância EC2 no console AWS com as seguintes características:
 
 1.4.2) Escolha em **Tipo** bote HTTPS e Tipo de Origem bote **Qualquer lugar**
 
-1.4.3) Clique novamente em **Adicionar regra de segurança** e adicione **TCP personalizado**, **Qualquer lugar**, digite 8000 no campo **Intervalo de portas** (apague o 0 e coloque 8000).
+1.4.3) Clique novamente em **Adicionar regra de segurança** e adicione **TCP personalizado**, **Qualquer lugar ou 0.0.0.0 no campo source**, digite 8000 no campo **Intervalo de portas** (apague o 0 e coloque 8000).
 
 1.5) Confirme tudo no botão laranja **Executar instância** e aguarde o EC2 subir.
 
