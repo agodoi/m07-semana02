@@ -157,7 +157,7 @@ Nessa etapa, vamos criar um **diretório** e um **subdiretório** dentro dele:
 
 4.1) Crie o diretório: ```mkdir projeto-flask``` [enter]
 
-4.2) Entre no diretóario **projeto-flask** e crie o subdiretório: projeto-flask\ ```mkdir main``` [enter]
+4.2) Entre no diretório **projeto-flask** e crie o subdiretório **main** assim: projeto-flask\ ```mkdir main``` [enter]
 
 4.3) Esteja no diretório raiz **projeto-flask/**
 
