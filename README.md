@@ -174,7 +174,7 @@ O -m indica que você deseja executar um módulo específico no python3, que nes
 
 Vamos ativar o seu ambiente virtual chamado **venv**:
 
-6.1) Na raiz **projeto-flask\**: ```source venv/bin/activate``` [enter]
+6.1) Na raiz **projeto-flask/**: ```source venv/bin/activate``` [enter]
 
 O resultado será o surgimento do (venv) no início do seu path raiz. Exemplo: **(venv) ubuntu@ip-172-31-32-65:~/projeto-flask$**
 
