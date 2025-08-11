@@ -235,7 +235,9 @@ E o resultado será essa tela abaixo:
 
 9.1) Atenção! Volte para **(venv)projeto-flask/** dando o comando ```cd ..```. Agora vamos instalar o servidor python *gunicorn*:
 
-9.2)Comando ```pip install gunicorn``` [enter]
+9.2) Atenção: a partir desse ponto, fique na pasta raiz **(venv)projeto-flask/**
+
+9.3) Comando ```pip install gunicorn``` [enter]
 
 # Passo-10:
 
